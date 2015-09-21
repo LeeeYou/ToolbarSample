@@ -1,0 +1,36 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.leeeyou.toolbarsample.ToolbarActivity">
+
+    <item
+        android:id="@+id/ac_toolbar_copy"
+        android:orderInCategory="100"
+        android:title="Copy"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/ac_toolbar_cut"
+        android:orderInCategory="100"
+        android:title="Cut"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/ac_toolbar_del"
+        android:orderInCategory="100"
+        android:title="Del"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/ac_toolbar_edit"
+        android:orderInCategory="100"
+        android:title="Edit"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/ac_toolbar_email"
+        android:orderInCategory="100"
+        android:title="Email"
+        app:showAsAction="never" />
+
+</menu>
