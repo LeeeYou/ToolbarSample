@@ -1,9 +1,12 @@
 package com.leeeyou.toolbarsample;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.Toolbar.OnMenuItemClickListener;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 public class ToolbarActivity extends Activity {
@@ -14,9 +17,25 @@ public class ToolbarActivity extends Activity {
         setContentView(R.layout.activity_toolbar);
 
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         toolbar.setTitle("Toolbar");
+        toolbar.setTitleTextColor(Color.WHITE);
+
+        toolbar.setSubtitle("SubTitle");
+        toolbar.setSubtitleTextColor(Color.GRAY);
+
+        toolbar.setNavigationIcon(R.mipmap.menu);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(ToolbarActivity.this, "Navigation", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        toolbar.setLogo(R.mipmap.ic_launcher);
+
         toolbar.inflateMenu(R.menu.menu_toolbar);
-        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+        toolbar.setOnMenuItemClickListener(new OnMenuItemClickListener() {
                                                @Override
                                                public boolean onMenuItemClick(MenuItem item) {
                                                    String result = "";
@@ -43,6 +62,8 @@ public class ToolbarActivity extends Activity {
                                                }
                                            }
         );
+
+
     }
 
 }

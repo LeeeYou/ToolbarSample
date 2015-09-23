@@ -32,7 +32,6 @@ public class BaseActivity extends AppCompatActivity {
         if (toolbar != null) {
             setSupportActionBar(toolbar);
         }
-
     }
 
     @Override

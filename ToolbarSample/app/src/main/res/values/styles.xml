@@ -9,7 +9,13 @@
         <item name="colorPrimary">@color/app_primary_color</item>
         <item name="colorPrimaryDark">@color/app_primary_color_dark</item>
         <item name="android:windowBackground">@color/app_color_background</item>
+        <item name="android:windowActionModeOverlay">true</item>
 
+    </style>
+
+    <style name="PopupMenu" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:colorBackground">@color/app_color_background</item>
+        <item name="android:textColor">@color/app_primary_color_dark</item>
     </style>
 
 </resources>
