@@ -1,4 +1,4 @@
-package com.leeeyou.toolbarsample;
+package com.leeeyou.toolbarsample.view;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -8,15 +8,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
-public class BaseActivity extends AppCompatActivity {
+import com.leeeyou.toolbarsample.R;
+
+public class Base_Center_Activity extends AppCompatActivity {
 
     private FrameLayout rootLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        super.setContentView(R.layout.activity_base);
+        super.setContentView(R.layout.activity_base_center);
 
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
             final WindowManager.LayoutParams attributes = getWindow().getAttributes();
@@ -51,5 +54,34 @@ public class BaseActivity extends AppCompatActivity {
 
         initToolbar();
     }
+
+    public void setTitleAndDoNotDisplayHomeAsUp(String title) {
+        getSupportActionBar().setTitle(title);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+    }
+
+    public void setTitleAndDisplayHomeAsUp(String title) {
+        getSupportActionBar().setTitle(title);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    public void setCenterTitleOnly(String title) {
+        getSupportActionBar().setTitle(null);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+
+        TextView toolbar_center_title = (TextView) findViewById(R.id.toolbar_center_title);
+        toolbar_center_title.setVisibility(View.VISIBLE);
+        toolbar_center_title.setText(title);
+    }
+
+    public void setLeftTitleOnly(String title) {
+        getSupportActionBar().setTitle(title);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+
+
+        TextView toolbar_center_title = (TextView) findViewById(R.id.toolbar_center_title);
+        toolbar_center_title.setVisibility(View.GONE);
+    }
+
 
 }

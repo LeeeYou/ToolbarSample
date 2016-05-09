@@ -1,15 +1,22 @@
-package com.leeeyou.toolbarsample;
+package com.leeeyou.toolbarsample.view;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.Toolbar.OnMenuItemClickListener;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.Toast;
 
-public class ToolbarActivity extends Activity {
+import com.leeeyou.toolbarsample.R;
+import com.leeeyou.toolbarsample.utils.UniversalAdapter;
+import com.leeeyou.toolbarsample.utils.ViewHolder;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ExampleActivity extends Base_Original_Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +35,7 @@ public class ToolbarActivity extends Activity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ToolbarActivity.this, "Navigation", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ExampleActivity.this, "Navigation", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -57,13 +64,25 @@ public class ToolbarActivity extends Activity {
                                                            break;
                                                    }
 
-                                                   Toast.makeText(ToolbarActivity.this, result, Toast.LENGTH_SHORT).show();
+                                                   Toast.makeText(ExampleActivity.this, result, Toast.LENGTH_SHORT).show();
                                                    return true;
                                                }
                                            }
         );
 
 
+        List<String> datas = new ArrayList<>(500);
+        for (int i = 0; i < 500; i++) {
+            datas.add("这是第" + (i + 1) + "行数据");
+        }
+
+        ListView listView = (ListView) findViewById(R.id.lv);
+        listView.setAdapter(new UniversalAdapter<String>(this, datas, android.R.layout.test_list_item) {
+            @Override
+            public void convert(ViewHolder vh, String item, int position) {
+                vh.setText(android.R.id.text1, item);
+            }
+        });
     }
 
 }
