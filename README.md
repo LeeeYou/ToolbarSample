@@ -1,4 +1,11 @@
 # ToolbarSample
+
+效果图
+
+![toolbarsample01](https://github.com/LeeeYou/ToolbarSample/blob/master/ToolbarSample/toolbarsample01.png)
+![toolbarsample02](https://github.com/LeeeYou/ToolbarSample/blob/master/ToolbarSample/toolbarsample02.png)
+![toolbarsample03](https://github.com/LeeeYou/ToolbarSample/blob/master/ToolbarSample/toolbarsample03.png)
+
 默认情况下，Toolbar和ActionBar在外观上并没有太大的区别，只是说Toolbar更自由了，而不像ActionBar那样有太多系统定制的条条框框。
 
 使用Toolbar分为两种情况：<br>
