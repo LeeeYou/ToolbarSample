@@ -5,8 +5,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="73dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Toolbar 与 ActionBar结合的示例"
         android:textColor="@color/app_primary_color"

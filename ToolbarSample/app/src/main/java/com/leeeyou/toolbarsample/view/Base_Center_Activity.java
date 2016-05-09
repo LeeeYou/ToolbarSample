@@ -7,18 +7,19 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.leeeyou.toolbarsample.R;
 
 public class Base_Center_Activity extends AppCompatActivity {
 
-    private FrameLayout rootLayout;
+    private LinearLayout rootLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         super.setContentView(R.layout.activity_base_center);
 
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
@@ -44,7 +45,7 @@ public class Base_Center_Activity extends AppCompatActivity {
 
     @Override
     public void setContentView(View view) {
-        rootLayout = (FrameLayout) findViewById(R.id.rootLayout);
+        rootLayout = (LinearLayout) findViewById(R.id.rootLayout);
 
         if (rootLayout == null) {
             return;
